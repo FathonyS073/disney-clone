@@ -16,26 +16,32 @@ function Header() {
 
   const menu = [
     {
+      id:1,
       name: 'Home',
       icon: HiHome,
     },
     {
+      id:2,
       name: 'Search',
       icon: HiMagnifyingGlass,
     },
     {
+      id:3,
       name: 'Watch List',
       icon: HiPlus,
     },
     {
+      id:4,
       name: 'Original',
       icon: HiStar,
     },
     {
+      id:5,
       name: 'Movies',
       icon: HiPlayCircle,
     },
     {
+      id:6,
       name: 'Series',
       icon: HiTv,
     },
@@ -46,13 +52,13 @@ function Header() {
         <img src={logo} className='w-[80px] md:w-[115px] object-cover' />
         <div className='hidden md:flex gap-9 mt-7 mx-5'>
           {menu.map((item) => (
-            <HeaderItem name={item.name} Icon={item.icon} />
+            <HeaderItem key={item.id} name={item.name} Icon={item.icon} />
             ))}
         </div>
         <div className='flex md:hidden gap-9 mt-5'>
           {menu.map((item, index) => index<3&&(
             <HeaderItem key={index}  name={''} Icon={item.icon} />
-            ))}
+            ))} 
         </div>
         <div className="md:hidden mt-5" onClick={()=>setToggle(!toggle)}>
           <HeaderItem name={''} Icon={HiDotsVertical} />
@@ -65,6 +71,7 @@ function Header() {
       </div>
       <img src={avatar} className='w-[60px] mt-3 rounded-full object-cover ml-auto' />
     </div>
+
   )
 }
 
