@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App w-full min-h-screen"> 
       <Header />
-      <Slide/>
+      <Slider />
     </div>
   )
 }
