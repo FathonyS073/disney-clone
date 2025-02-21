@@ -69,7 +69,7 @@ function Header() {
           </div>:null}
         </div>
       </div>
-      <img src={avatar} className='w-[60px] mt-3 rounded-full object-cover ml-auto' />
+      <img src={avatar} className='md:w-[50px] w-[40px] mt-3 rounded-full object-cover ml-auto' />
     </div>
 
   )
