@@ -6,7 +6,7 @@ import Slider from './Components/Slider'
 
 function App() {
   return (
-    <div className="App w-full min-h-screen"> 
+    <div className="App max-w-screen overflow-hidden min-h-screen"> 
       <Header />
       <Slider />
       <ProductionHouse/>

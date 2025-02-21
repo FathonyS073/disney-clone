@@ -47,13 +47,31 @@ function ProductionHouse() {
 
 
   return (
-    <div className='flex gap-5 p-2 px-5 md:px-16 w-full'>
-        {productonHouseList.map((item)=>(
-            <div className='border-[2px] border-gray-600 rounded-lg'>
-                <img key={item.id} src={item.image} className='w-full'/>
-            </div>
-        ))}
+    <div className="flex gap-3 md:gap-5 px-5 md:px-16 w-full mb-10">
+  {productonHouseList.map((item, index) => (
+    <div key={index} className="relative border-[2px] border-gray-600 
+        rounded-lg hover:scale-110 duration-300 transition-all ease-in-out 
+        cursor-pointer overflow-hidden">
+      
+      {/* Gambar */}
+      <img 
+        src={item.image} 
+        className="w-full transition-opacity duration-300"
+      />
+
+      {/* Video */}
+      <video 
+        src={item.video} 
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover rounded-md opacity-0 transition-opacity duration-300 hover:opacity-50"
+      />
     </div>
+  ))}
+</div>
+
   )
 }
 

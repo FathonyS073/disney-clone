@@ -18,6 +18,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+html, body {
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+
 a {
   font-weight: 500;
   color: #646cff;
