@@ -52,7 +52,7 @@ function Slider() {
                     onClick={() => handleSlide('right')}
                 />
             </div>
-            <div className="w-full flex overflow-x-auto py-10 px-12 scrollbar-hide scroll-smooth" ref={elementRef}>
+            <div className="w-full flex overflow-x-auto py-7 md:py-10 px-12 scrollbar-hide scroll-smooth" ref={elementRef}>
                 {trendingVideos.map((item, index) => (
                     <img
                         key={item.id}

@@ -47,7 +47,7 @@ function ProductionHouse() {
 
 
   return (
-    <div className="flex gap-3 md:gap-5 px-5 md:px-16 w-full mb-10">
+    <div className="flex gap-3 md:gap-5 px-5 md:px-16 w-full mb-2 md:mb-10">
   {productonHouseList.map((item, index) => (
     <div key={index} className="relative border-[2px] border-gray-600 
         rounded-lg hover:scale-110 duration-300 transition-all ease-in-out 
