@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import logo from './../assets/picture/header.png'
-import avatar from './../assets/picture/avatar.png'
+import logo from './../assets/Picture/header.png'
+import avatar from './../assets/Picture/avatar.png'
 import { HiHome,
   HiMagnifyingGlass,
   HiStar,
