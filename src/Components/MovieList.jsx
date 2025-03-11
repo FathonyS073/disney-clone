@@ -2,10 +2,11 @@ import React, { useEffect, useState, useRef } from 'react';
 import GlobalApi from '../Service/GlobalApi';
 import MovieCard from './MovieCard';
 import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5';
+import HrMovieCard from './HrMovieCard';
 
 const imgBaseUrl = 'https://image.tmdb.org/t/p/original';
 
-function MovieList({ genreId }) {
+function MovieList({ genreId, index_ }) {
     const [movieList, setMovieList] = useState([]);
     const elementRef = useRef(null);
 
@@ -58,13 +59,15 @@ function MovieList({ genreId }) {
             {/* Tombol Panah Kiri */}
             <IoChevronBackOutline 
                 onClick={slideLeft}
-                className="text-[50px] text-white p-2 z-10 cursor-pointer hidden md:block absolute left-0 top-1/2 transform -translate-y-1/2"
+                className={`text-[50px] text-white p-2 z-10 cursor-pointer hidden md:block absolute left-0 ${index_%3==0? 'mt-[100px]' : 'mt-[150px]'} transform -translate-y-1/2`}
             />
 
             {/* Container Movie List */}
             <div ref={elementRef} className="flex overflow-x-scroll gap-8 scrollbar-hide pt-5 px-3 md:pb-5 scroll-smooth">
                 {movieList.map((item, index) => (
-                    <MovieCard key={index} movie={item} />
+                    <>
+                {index_%3==0? <HrMovieCard movie={item}/> : <MovieCard key={index} movie={item}/>}
+                    </>
                 ))}
             </div>
 
