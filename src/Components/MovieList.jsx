@@ -19,17 +19,39 @@ function MovieList({ genreId }) {
         });
     };
 
-    const slideLeft = () => {
-        if (elementRef.current) {
-            elementRef.current.scrollBy({ left: -500, behavior: "smooth" });
-        }
+    // const slideLeft = () => {
+    //     if (elementRef.current) {
+    //         elementRef.current.scrollBy({ left: -500, behavior: "smooth" });
+    //     }
+    // };
+    
+    // const slideRight = () => {
+    //     if (elementRef.current) {
+    //         elementRef.current.scrollBy({ left: 500, behavior: "smooth" });
+    //     }
+    // };
+    const smoothScroll = (direction) => {
+        let start = elementRef.current.scrollLeft;
+        let end = direction === "left" ? start - 500 : start + 500;
+        let startTime = null;
+    
+        const animateScroll = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            let progress = timestamp - startTime;
+            let easeInOut = Math.min(progress / 300, 1); // 300ms animation
+            elementRef.current.scrollLeft = start + (end - start) * easeInOut;
+    
+            if (progress < 300) {
+                requestAnimationFrame(animateScroll);
+            }
+        };
+    
+        requestAnimationFrame(animateScroll);
     };
     
-    const slideRight = () => {
-        if (elementRef.current) {
-            elementRef.current.scrollBy({ left: 500, behavior: "smooth" });
-        }
-    };
+    const slideLeft = () => smoothScroll("left");
+    const slideRight = () => smoothScroll("right");
+    
 
     return (
         <div className="relative">
